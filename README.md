@@ -1,4 +1,1 @@
-Run project:
-Open directory with nodejs
-$npm run prodBuild
-$npm start
+To run the project open project directory with nodejs, $npm run prodBuild, $npm start
