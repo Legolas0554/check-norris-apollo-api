@@ -1,3 +1,5 @@
+import { ChuckNorrisJokesService } from './services/chuckNorrisJokesService'
+
 const books = [
     {
       title: 'Harry Potter and the Chamber of Secrets',
@@ -12,6 +14,7 @@ const books = [
 
 export default {
     Query: {
-        books: () => books,
+        categories: async ( _ : any, args: any, {dataSources } : any) : Promise<string[]> => 
+             dataSources.ChuckNorrisJokesService.getCategories() 
       },
     };

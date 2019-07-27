@@ -1,7 +1,7 @@
 import { RESTDataSource } from "apollo-datasource-rest";
 
-export interface Jokes extends RESTDataSource {
-    
+export interface JokesService extends RESTDataSource {
+
     getCategories(): Promise<string[]>;
 
     getRandomJoke(): Promise<string>;

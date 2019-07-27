@@ -19,7 +19,7 @@ export const environment: Environment = {
   },
   port: process.env.PORT || defaultPort,
   baseURL:'https://api.chucknorris.io/',
-  categoriesEndpoint:'/jokes/categories',
+  categoriesEndpoint: '/jokes/categories',
   randomEndpoint: '/jokes/random',
   searchEndpoint: '/jokes/search'
 };

@@ -1,11 +1,10 @@
-import { JokesService } from "../interfaces/jokesService";
 import { RESTDataSource } from 'apollo-datasource-rest';
 import { environment } from "../enviroments/environment";
 import { ChuckNorrisJokeResponse} from "../models/response";
 
 
 
-export class ChuckNorrisJokesService extends RESTDataSource implements JokesService   {
+export class ChuckNorrisJokesService extends RESTDataSource  {
     
     constructor() {
         super();

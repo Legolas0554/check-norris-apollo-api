@@ -1,6 +1,6 @@
 import { ApolloServer } from 'apollo-server';
-
-import { environment } from './environment';
+import { ChuckNorrisJokesService } from './services/chuckNorrisJokesService';
+import { environment } from './enviroments/environment';
 import resolvers from './resolvers';
 import typeDefs from './schemas';
 
@@ -8,7 +8,12 @@ const server = new ApolloServer({
   resolvers,
   typeDefs,
   introspection: environment.apollo.introspection,
-  playground: environment.apollo.playground
+  playground: environment.apollo.playground,
+  dataSources: () => {
+    return {
+        ChuckNorrisJokesService: new ChuckNorrisJokesService(),
+    };
+  },
 });
 
 server.listen(environment.port)
@@ -18,3 +23,4 @@ if (module.hot) {
     module.hot.accept();
     module.hot.dispose(() => console.log('Module disposed. '));
 }
+//ChuckNorrisJokesService
