@@ -1,7 +1,13 @@
 import { gql } from 'apollo-server';
 
 export default gql`
+
+  type Book {
+    title: String
+    author: String
+    test: String
+  }
   type Query {
-    testMessage: String!
+    books: [Book]
   }
 `;
