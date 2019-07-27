@@ -1,27 +1,30 @@
 import { Jokes as JokesService } from "../interfaces/jokes";
-const { RESTDataSource } = require('apollo-datasource-rest');
+import { RESTDataSource } from 'apollo-datasource-rest';
+import { environment } from "../enviroments/environment";
 
 
 
 export class ChuckNorseJokesService extends RESTDataSource implements JokesService   {
+    
+    constructor() {
+        super();
+        this.baseURL = environment.baseURL;
+    }
 
+    async getCategories()   {
+        return this.get<string[]>(environment.categoriesEndpoint);
+    }  
 
-     getCategories(): string[] {
-         throw new Error("Method not implemented.");
-     }  
+    async getRandomJoke() {
+        return this.get<string>(environment.randomEndpoint);
+    }
 
-     getRandomJoke(): string {
-         throw new Error("Method not implemented.");
-     }
+    async getRandomJokeForCategory(category: string) {
+        return this.get<string>(`${environment.randomEndpoint}?category=${category}`);
+    }
 
-     getRandomJokeForCategory(category: string): string {
-         throw new Error("Method not implemented.");
-     }
-
-     searchForJoke(search: string): string {
-         throw new Error("Method not implemented.");
-     }
-
-
+    async searchForJoke(search: string) {
+        return this.get<string>(`${environment.searchEndpoint}?query=${search}`);
+    }
 
 }

@@ -1,6 +1,8 @@
-export interface Jokes {
-    RetrieveCategories(): string[];
-    RetrieveRandomJoke():string;
-    RetrieveRandomJokeForCategory(category:string):string;
-    SearchForJoke(search:string):string;
+import { RESTDataSource } from "apollo-datasource-rest";
+
+export interface Jokes extends RESTDataSource {
+    getCategories(): Promise<string[]>;
+    getRandomJoke(): Promise<string>;
+    getRandomJokeForCategory(category:string): Promise<string>;
+    searchForJoke(search:string): Promise<string>;
 }
