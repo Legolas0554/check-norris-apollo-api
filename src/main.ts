@@ -9,11 +9,9 @@ const server = new ApolloServer({
   typeDefs,
   introspection: environment.apollo.introspection,
   playground: environment.apollo.playground,
-  dataSources: () => {
-    return {
+  dataSources: () => ({
         ChuckNorrisJokesService: new ChuckNorrisJokesService(),
-    };
-  },
+  }),
 });
 
 server.listen(environment.port)
@@ -23,4 +21,3 @@ if (module.hot) {
     module.hot.accept();
     module.hot.dispose(() => console.log('Module disposed. '));
 }
-//ChuckNorrisJokesService
