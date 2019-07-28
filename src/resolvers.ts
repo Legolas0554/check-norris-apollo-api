@@ -11,7 +11,7 @@ const books = [
     },
   ];
 
-
+//could not find a better way had to set the arguments as any type
 export default {
     Query: {
         categories: async ( source: any, args: any, { dataSources }  : any) : Promise<string[]> => 

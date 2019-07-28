@@ -9,6 +9,7 @@ const server = new ApolloServer({
   typeDefs,
   introspection: environment.apollo.introspection,
   playground: environment.apollo.playground,
+  debug: environment.apollo.debug,
   dataSources: () => ({
         ChuckNorrisJokesService: new ChuckNorrisJokesService(),
   }),
