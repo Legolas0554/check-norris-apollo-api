@@ -1,16 +1,5 @@
 import { ChuckNorrisJokesService } from './services/chuckNorrisJokesService'
 
-const books = [
-    {
-      title: 'Harry Potter and the Chamber of Secrets',
-      author: 'J.K. Rowling',
-    },
-    {
-      title: 'Jurassic Park',
-      author: 'Michael Crichton',
-    },
-  ];
-
 //could not find a better way had to set the arguments as any type
 export default {
     Query: {
