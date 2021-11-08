@@ -33,7 +33,7 @@
   "dependencies": {
     "@types/node": "^12.6.8",
     "apollo-datasource-rest": "^0.6.1",
-    "apollo-server": "^2.7.2",
+    "apollo-server": "^2.25.3",
     "graphql": "^14.4.2"
   }
 }
